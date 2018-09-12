@@ -6,8 +6,12 @@
 
 ---
 
-##### Front-End Technologies
+##### Dependencies
+* Node.JS 10.7.0
+* NPM 6.4.0
+
+##### Front-End
 * Angular 6.1.3
 
-##### Back-End Technologies
+##### Back-End
 * ASP.NET Core 2.1.302
