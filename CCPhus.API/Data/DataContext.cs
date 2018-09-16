@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using CCPhus.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace CCPhus.API.Data
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options) { }
+
+        public DbSet<Value> Values { get; set; }
     }
 }
