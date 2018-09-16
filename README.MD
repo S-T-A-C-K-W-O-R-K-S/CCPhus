@@ -18,5 +18,7 @@
 ##### Back-End
 * ASP.NET Core 2.1.4
 
-##### Database Connector
+##### Database
+* Entity Framework Core 2.1.3
 * MySQL 8.0.12
+* Pomelo.EntityFrameworkCore.MySql 2.1.2
