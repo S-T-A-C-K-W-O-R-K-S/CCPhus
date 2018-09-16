@@ -7,11 +7,16 @@
 ---
 
 ##### Dependencies
+* .NET Core SDK 2.1.4
 * Node.JS 10.7.0
 * NPM 6.4.0
+* Angular CLI 6.2.2
 
 ##### Front-End
-* Angular 6.1.3
+* Angular 6.1.7
 
 ##### Back-End
-* ASP.NET Core 2.1.302
+* ASP.NET Core 2.1.4
+
+##### Database Connector
+* MySQL 8.0.12
