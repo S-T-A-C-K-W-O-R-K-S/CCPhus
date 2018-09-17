@@ -14,11 +14,10 @@
 
 ##### Front-End
 * Angular 6.1.7
+* Bootstrap 4.1.3
+* Font Awesome 4.7.0
 
 ##### Back-End
 * ASP.NET Core 2.1.4
-
-##### Database
 * Entity Framework Core 2.1.3
-* MySQL 8.0.12
-* Pomelo.EntityFrameworkCore.MySql 2.1.2
+* Pomelo MySQL Database Provider 2.1.2
