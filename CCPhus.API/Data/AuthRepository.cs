@@ -40,7 +40,7 @@ namespace CCPhus.API.Data
 
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username).ConfigureAwait(false);
+            var user = await _context.Users.FirstOrDefaultAsync(x => string.Equals(x.Username, username, StringComparison.OrdinalIgnoreCase)).ConfigureAwait(false);
 
             if (user == null) return null;
 
