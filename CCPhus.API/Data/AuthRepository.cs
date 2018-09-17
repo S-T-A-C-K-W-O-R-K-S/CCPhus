@@ -66,7 +66,7 @@ namespace CCPhus.API.Data
 
         public async Task<bool> UserExists(string username)
         {
-            if (await _context.Users.AnyAsync(x => x.Username == username).ConfigureAwait(false)) return true;
+            if (await _context.Users.AnyAsync(x => string.Equals(x.Username, username, StringComparison.OrdinalIgnoreCase)).ConfigureAwait(false)) return true;
 
             return false;
         }
