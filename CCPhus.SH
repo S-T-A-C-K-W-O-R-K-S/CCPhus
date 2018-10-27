@@ -1,5 +1,4 @@
-echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))"
-echo
+echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))" && echo
 
 PS3='Select The Runtime Environment: '
 
@@ -11,24 +10,33 @@ do
 	case $option in
 		"Development")
 			echo "Runtime Environment: $option"
-			$(bash $(PWD)/CCCPhus.API/CCPhus.API_Development.SH)
-			$(bash $(PWD)/CCCPhus.SPA/CCPhus.SPA_Development.SH)
-			break
-			;;
+			
+			echo "Deploying CC.API"
+			(cd CCPhus.API && bash CCPhus.API_Development.SH && cd ..) &
+			
+			sleep 5s
+			
+			echo && echo "Deploying CC.SPA"
+			(cd CCPhus.SPA && bash CCPhus.SPA_Development.SH && cd ..) & ;;
+			
 		"Production")
 			echo "Runtime Environment: $option"
-			$(bash $(PWD)/CCCPhus.API/CCPhus.API_Production.SH)
-			$(bash $(PWD)/CCCPhus.SPA/CCPhus.SPA_Production.SH)
-			break
-			;;
+			
+			echo "Deploying CC.API"
+			(cd CCPhus.API && bash CCPhus.API_Production.SH && cd ..) &
+			
+			sleep 5s
+			
+			echo && echo "Deploying CC.SPA"
+			(cd CCPhus.SPA && bash CCPhus.SPA_Production.SH && cd ..) & ;;
+			
 		"Quit")
-			break
-			;;
+			break ;;
+			
 		*)
 			echo "Invalid Selection: $REPLY"
 			echo "Try Again"
-			echo
-			;;
+			echo ;;
 	esac
 done
 
