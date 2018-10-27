@@ -1,6 +1,6 @@
-echo "Environment: Production"
+echo
 echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))"
 
 ng serve --configuration Production
 
-read
+echo

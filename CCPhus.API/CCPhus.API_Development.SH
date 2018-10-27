@@ -1,6 +1,6 @@
-echo "Environment: Development"
+echo
 echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))"
 
 dotnet watch run --environment Development
 
-read
+echo
