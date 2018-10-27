@@ -11,16 +11,16 @@ do
 		"Deploy Development Servers")
 			echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Development.SH && cd ..) &
-			sleep 7.5s
+			sleep 5s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Development.SH && cd ..) &
-			sleep 17.5s && echo ;;
+			sleep 15s && echo ;;
 			
 		"Deploy Production Servers")
 			echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Production.SH && cd ..) &
-			sleep 7.5s
+			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Production.SH && cd ..) &
-			sleep 17.5s echo ;;
+			sleep 30s && echo ;;
 			
 		"Kill Currently Running Servers")
 			echo
