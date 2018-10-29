@@ -1,5 +1,5 @@
 #!/bin/bash
-printf '\033[8;40;120t'
+printf '\033[8;40;160t'
 
 echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))" && echo
 
