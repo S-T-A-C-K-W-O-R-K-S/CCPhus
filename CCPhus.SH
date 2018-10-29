@@ -1,3 +1,6 @@
+#!/bin/bash
+printf '\033[8;40;120t'
+
 echo "Executing Script From: $(PWD; echo on  $(HOSTNAME))" && echo
 
 PS3='Select An Option: '
@@ -11,16 +14,18 @@ do
 		"Deploy Development Servers")
 			echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Development.SH && cd ..) &
-			sleep 5s
+			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Development.SH && cd ..) &
-			sleep 15s && echo ;;
+			sleep 22.5s && echo
+			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
 			
 		"Deploy Production Servers")
 			echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Production.SH && cd ..) &
 			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Production.SH && cd ..) &
-			sleep 30s && echo ;;
+			sleep 45s && echo
+			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
 			
 		"Kill Currently Running Servers")
 			echo
