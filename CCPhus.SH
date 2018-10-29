@@ -12,19 +12,19 @@ select option in "${options[@]}"
 do
 	case $option in
 		"Deploy Development Servers")
-			echo && echo "Executing: $option"
+			stty -echo && echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Development.SH && cd ..) &
 			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Development.SH && cd ..) &
-			sleep 22.5s && echo
+			sleep 22.5s && echo && stty echo
 			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
 			
 		"Deploy Production Servers")
-			echo && echo "Executing: $option"
+			stty -echo && echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Production.SH && cd ..) &
 			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Production.SH && cd ..) &
-			sleep 45s && echo
+			sleep 45s && echo && stty echo
 			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
 			
 		"Kill Currently Running Servers")
