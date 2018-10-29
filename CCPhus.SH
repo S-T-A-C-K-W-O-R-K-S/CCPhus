@@ -12,27 +12,29 @@ select option in "${options[@]}"
 do
 	case $option in
 		"Deploy Development Servers")
-			stty -echo && echo && echo "Executing: $option"
+			stty -echo && tput civis && echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Development.SH && cd ..) &
 			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Development.SH && cd ..) &
-			sleep 22.5s && echo && stty echo
-			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
+			sleep 22.5s && echo
+			# stty echo && tput cnorm && read -n 1 -s -r -p "Press Any Key To Exit\n\n" && exit
+			echo && read ;; # keeps the terminal window open, but prevents user input
 			
 		"Deploy Production Servers")
-			stty -echo && echo && echo "Executing: $option"
+			stty -echo && tput civis && echo && echo "Executing: $option"
 			(cd CCPhus.API && bash CCPhus.API_Production.SH && cd ..) &
 			sleep 10s
 			(cd CCPhus.SPA && bash CCPhus.SPA_Production.SH && cd ..) &
 			sleep 45s && echo && stty echo
-			read -n 1 -s -r -p "Press Any Key To Exit " && exit ;;
+			# stty echo && tput cnorm && read -n 1 -s -r -p "Press Any Key To Exit\n\n" && exit
+			echo && read ;; # keeps the terminal window open, but prevents user input
 			
 		"Kill Currently Running Servers")
-			echo
+			stty -echo && tput civis && echo
 			echo "Terminating CCPhus.API On Port 5000" && fkill :5000 --force && sleep 2s
 			echo "Terminating CCPhus.API On Port 5001" && fkill :5001 --force && sleep 2s
 			echo "Terminating CCPhus.SPA On Port 4200" && fkill :4200 --force && sleep 2s
-			echo ;;
+			stty echo && tput cnorm && echo ;;
 			
 		"Quit")
 			break ;;
