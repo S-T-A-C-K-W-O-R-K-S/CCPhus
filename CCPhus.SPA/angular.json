@@ -28,7 +28,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "Production": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -53,8 +53,8 @@
             "browserTarget": "CCPhus.SPA:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "CCPhus.SPA:build:production"
+            "Production": {
+              "browserTarget": "CCPhus.SPA:build:Production"
             }
           }
         },
@@ -106,8 +106,8 @@
             "devServerTarget": "CCPhus.SPA:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "CCPhus.SPA:serve:production"
+            "Production": {
+              "devServerTarget": "CCPhus.SPA:serve:Production"
             }
           }
         },
