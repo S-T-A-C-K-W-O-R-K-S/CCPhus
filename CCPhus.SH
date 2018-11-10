@@ -5,7 +5,7 @@ echo "Executing Script From: $(PWD) on $(HOSTNAME)" && echo
 
 PS3='Select An Option: '
 
-options=("Deploy Development Servers" "Deploy Production Servers" "Kill Currently Running Servers" "Quit")
+options=("Deploy Development Servers" "Deploy Production Servers" "Kill Currently Running Servers" "Run CCPhus" "Quit")
 
 select option in "${options[@]}"
 
@@ -36,6 +36,19 @@ do
 			echo "Terminating CCPhus.SPA On Port 4200" && fkill :4200 --force && sleep 2s
 			stty echo -igncr && tput cnorm && echo ;;
 			
+		"Run CCPhus")
+			viewer=echo
+			for possibility in xdg-open gnome-open cygstart start open ; do
+				if command -v "$possibility" >/dev/null 2>&1 ; then # ">/dev/null 2>&1" redirects the output to /dev/null; includes both stderr and stdout
+					viewer="$possibility"
+					break
+				fi
+			done
+			if [ "$viewer" = echo ] ; then
+				echo && echo 'No Viewer Found' 1>&2 # outputs to stderr (standard error) rather than stdout (standard output)
+			fi
+			"$viewer" "http://localhost:4200/" && echo ;;
+		
 		"Quit")
 			break ;;
 			
