@@ -15,6 +15,7 @@ import { AlertifyService } from './_services/alertify.service';
 import { appRoutes } from './routes';
 import { ScriptsComponent } from './scripts/scripts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 @NgModule({
    declarations: [
@@ -35,7 +36,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      AlertifyService
+      AlertifyService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
