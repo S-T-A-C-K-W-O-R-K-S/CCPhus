@@ -4,6 +4,10 @@
 
         <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
             <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/scripts']">Scripts</a>
             </li>
         </ul>

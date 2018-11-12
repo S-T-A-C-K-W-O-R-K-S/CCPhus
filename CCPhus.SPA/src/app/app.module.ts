@@ -12,8 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor.service';
 import { AlertifyService } from './_services/alertify.service';
-import { ScriptsComponent } from './scripts/scripts.component';
 import { appRoutes } from './routes';
+import { ScriptsComponent } from './scripts/scripts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
    declarations: [
@@ -21,7 +22,8 @@ import { appRoutes } from './routes';
       NavComponent,
       HomeComponent,
       RegisterComponent,
-      ScriptsComponent
+      ScriptsComponent,
+      DashboardComponent
    ],
    imports: [
       BrowserModule,
