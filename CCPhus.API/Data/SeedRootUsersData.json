@@ -1,0 +1,16 @@
+[
+  {
+    "Username": "CCPhus",
+    "Password": "ccphusroot",
+    "Company": "StackWorks™",
+    "Created": "1986-08-05",
+    "LastActive": "1986-08-05",
+    "City": "London",
+    "Country": "United Kingdom",
+    "Photos": [
+      {
+        "URL": "https://randomuser.me/api/portraits/men/1.jpg"
+      }
+    ]
+  }
+]
