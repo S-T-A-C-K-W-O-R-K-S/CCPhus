@@ -23,7 +23,24 @@ namespace CCPhus.API.Data
             var rootUsers = JsonConvert.DeserializeObject<List<User>>(rootUsersData);
             foreach (var rootUser in rootUsers)
             {
-                
+                byte[] passwordHash, passwordSalt;
+                CreatePasswordHash("root", out passwordHash, out passwordSalt);
+
+                rootUser.PasswordHash = passwordHash;
+                rootUser.PasswordSalt = passwordSalt;
+
+                _context.Users.Add(rootUser);
+            }
+
+            _context.SaveChanges();
+        }
+
+        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using (var HMAC = new System.Security.Cryptography.HMACSHA512())
+            {
+                passwordSalt = HMAC.Key;
+                passwordHash = HMAC.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
         }
     }

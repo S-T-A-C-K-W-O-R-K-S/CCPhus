@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace CCPhus.API.Models
 {
@@ -20,5 +21,6 @@ namespace CCPhus.API.Models
         public DateTime LastActive { get; set; }
 
         public ICollection<Script> Scripts { get; set; }
+        public ICollection<Photo> Photos { get; set; }
     }
 }

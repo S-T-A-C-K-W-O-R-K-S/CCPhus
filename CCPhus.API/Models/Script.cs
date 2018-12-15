@@ -20,7 +20,7 @@ namespace CCPhus.API.Models
         public User User { get; set; }
         public int UserId { get; set; }
 
-        // public ICollection<User> Users { get; set; }
+        // public ICollection<User> PermittedUsers { get; set; }
         // ef migration throws error
     }
 }

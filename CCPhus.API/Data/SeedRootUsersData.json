@@ -1,15 +1,17 @@
 [
   {
     "Username": "CCPhus",
-    "Password": "ccphusroot",
+    "Password": "root",
     "Company": "StackWorks™",
     "Created": "1986-08-05",
-    "LastActive": "1986-08-05",
+    "LastActive": null,
     "City": "London",
     "Country": "United Kingdom",
     "Photos": [
       {
-        "URL": "https://randomuser.me/api/portraits/men/1.jpg"
+        "URL": "https://randomuser.me/api/portraits/men/1.jpg",
+        "DateAdded": null,
+        "isMain": true
       }
     ]
   }
