@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CCPhus.API.Models
 {
-    public class Photo
+    public class Avatar
     {
         public int Id { get; set; }
         public string URL { get; set; }

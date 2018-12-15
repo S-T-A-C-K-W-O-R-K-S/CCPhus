@@ -16,8 +16,8 @@ namespace CCPhus.API.Data
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(int id);
 
-        Task<IEnumerable<Photo>> GetPhotos();
-        Task<Photo> GetPhoto(int id);
+        Task<IEnumerable<Avatar>> GetAvatars();
+        Task<Avatar> GetAvatar(int id);
 
         Task<IEnumerable<Script>> GetScripts();
         Task<Script> GetScript(int id);

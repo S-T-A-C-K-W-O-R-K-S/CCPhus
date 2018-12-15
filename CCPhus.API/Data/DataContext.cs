@@ -13,6 +13,6 @@ namespace CCPhus.API.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Script> Scripts { get; set; }
-        public DbSet<Photo> Photos { get; set; }
+        public DbSet<Avatar> Avatars { get; set; }
     }
 }

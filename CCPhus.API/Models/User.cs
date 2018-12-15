@@ -20,7 +20,7 @@ namespace CCPhus.API.Models
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public ICollection<Avatar> Avatars { get; set; }
         public ICollection<Script> Scripts { get; set; }
     }
 }

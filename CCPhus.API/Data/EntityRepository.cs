@@ -26,16 +26,16 @@ namespace CCPhus.API.Data
             _context.Remove(entity);
         }
 
-        public async Task<Photo> GetPhoto(int id)
+        public async Task<Avatar> GetAvatar(int id)
         {
-            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
-            return photo;
+            var avatar = await _context.Avatars.FirstOrDefaultAsync(a => a.Id == id);
+            return avatar;
         }
 
-        public async Task<IEnumerable<Photo>> GetPhotos()
+        public async Task<IEnumerable<Avatar>> GetAvatars()
         {
-            var photos = await _context.Photos.ToListAsync();
-            return photos;
+            var avatars = await _context.Avatars.ToListAsync();
+            return avatars;
         }
 
         public async Task<Script> GetScript(int id)
@@ -52,13 +52,13 @@ namespace CCPhus.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(p => p.Photos).Include(s => s.Scripts).FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.Include(a => a.Avatars).Include(s => s.Scripts).FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await _context.Users.Include(p => p.Photos).Include(s => s.Scripts).ToListAsync();
+            var users = await _context.Users.Include(a => a.Avatars).Include(s => s.Scripts).ToListAsync();
             return users;
         }
 
