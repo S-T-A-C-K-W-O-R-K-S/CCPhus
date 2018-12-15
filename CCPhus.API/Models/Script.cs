@@ -17,7 +17,9 @@ namespace CCPhus.API.Models
 
         public DateTime Created { get; set; }
 
-        // public ICollection<User> Owners { get; set; }
+        public User User { get; set; }
+        public int UserId { get; set; }
+
         // public ICollection<User> Users { get; set; }
         // ef migration throws error
     }

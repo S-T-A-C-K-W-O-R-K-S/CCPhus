@@ -32,7 +32,7 @@ namespace CCPhus.API.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("UserId");
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
@@ -69,9 +69,10 @@ namespace CCPhus.API.Migrations
 
             modelBuilder.Entity("CCPhus.API.Models.Script", b =>
                 {
-                    b.HasOne("CCPhus.API.Models.User")
+                    b.HasOne("CCPhus.API.Models.User", "User")
                         .WithMany("Scripts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
