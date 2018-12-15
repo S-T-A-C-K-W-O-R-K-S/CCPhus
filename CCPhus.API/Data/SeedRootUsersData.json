@@ -3,15 +3,24 @@
     "Username": "CCPhus",
     "Password": "root",
     "Company": "StackWorks™",
-    "Created": "1986-08-05",
-    "LastActive": null,
     "City": "London",
     "Country": "United Kingdom",
+    "Created": "1986-08-05",
+    "LastActive": "1986-08-05",
     "Photos": [
       {
         "URL": "https://randomuser.me/api/portraits/men/1.jpg",
-        "DateAdded": null,
+        "DateAdded": "1986-08-05",
         "isMain": true
+      }
+    ],
+    "Scripts": [
+      {
+        "Name": "Seeded Script",
+        "Description": "Generated programatically, for testing purposes.",
+        "Code": "foo bar",
+        "Created": "1986-08-05",
+        "LastRun": "1986-08-05"
       }
     ]
   }

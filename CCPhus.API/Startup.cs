@@ -39,6 +39,7 @@ namespace CCPhus.API
             services.AddCors();
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IEntityRepository, EntityRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -83,7 +84,7 @@ namespace CCPhus.API
             }
 
             app.UseHttpsRedirection();
-            seeder.SeedRootUsers();
+            // seeder.SeedRootUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();

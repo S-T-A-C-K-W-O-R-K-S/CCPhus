@@ -16,11 +16,13 @@ namespace CCPhus.API.Models
         public bool Active { get; set; }
 
         public DateTime Created { get; set; }
+        public DateTime LastRun { get; set; }
 
         public User User { get; set; }
         public int UserId { get; set; }
 
-        // public ICollection<User> PermittedUsers { get; set; }
-        // ef migration throws error
+        //public ICollection<User> PermittedUsers { get; set; }
+        // many-to-many relations not supported
+        // read this on how to make this work: https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/
     }
 }
