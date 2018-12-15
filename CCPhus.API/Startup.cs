@@ -84,7 +84,7 @@ namespace CCPhus.API
             }
 
             app.UseHttpsRedirection();
-            // seeder.SeedRootUsers();
+            seeder.SeedRootUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();

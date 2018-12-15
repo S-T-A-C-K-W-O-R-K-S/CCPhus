@@ -20,6 +20,7 @@
         "Description": "Generated programatically, for testing purposes.",
         "Code": "foo bar",
         "Created": "1986-08-05",
+        "Active": true,
         "LastRun": "1986-08-05"
       }
     ]
