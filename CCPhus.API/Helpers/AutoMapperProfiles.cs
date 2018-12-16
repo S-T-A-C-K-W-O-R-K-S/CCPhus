@@ -25,13 +25,6 @@ namespace CCPhus.API.Helpers
                 });
             CreateMap<Avatar, AvatarsForDetailedDTO>();
             CreateMap<Script, ScriptsForDetailedDTO>();
-            CreateMap<User, Script>()
-                .ForMember(dest => dest.Owner, opt => {
-                    opt.MapFrom(src => src.Username);
-                })
-                .ForMember(dest => dest.OwnerId, opt => {
-                    opt.MapFrom(src => src.Id);
-                });
         }
     }
 }
