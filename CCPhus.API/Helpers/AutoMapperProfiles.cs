@@ -12,8 +12,17 @@ namespace CCPhus.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<User, UserForListDTO>();
-            CreateMap<User, UserForDetailedDTO>();
+            CreateMap<User, UserForListDTO>()
+                .ForMember(dest => dest.AvatarURL, opt => {
+                    opt.MapFrom(src => src.Avatars.FirstOrDefault(avatar => avatar.IsMain).URL);
+                });
+            CreateMap<User, UserForDetailedDTO>()
+                .ForMember(dest => dest.AvatarURL, opt => {
+                    opt.MapFrom(src => src.Avatars.FirstOrDefault(avatar => avatar.IsMain).URL);
+                })
+                .ForMember(dest => dest.TimeAsUser, opt => {
+                    opt.MapFrom(src => src.Created.CalculateTimeAsUser());
+                });
             CreateMap<Avatar, AvatarsForDetailedDTO>();
             CreateMap<Script, ScriptsForDetailedDTO>();
         }

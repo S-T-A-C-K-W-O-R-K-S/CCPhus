@@ -15,7 +15,7 @@ namespace CCPhus.API.DTOs
         public string Country { get; set; }
         public string Company { get; set; }
 
-        public int TimeAsUser { get; set; }
+        public string TimeAsUser { get; set; }
 
         public DateTime LastActive { get; set; }
 
