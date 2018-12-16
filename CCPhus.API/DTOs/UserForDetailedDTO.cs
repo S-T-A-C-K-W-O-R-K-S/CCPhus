@@ -15,10 +15,12 @@ namespace CCPhus.API.DTOs
         public string Country { get; set; }
         public string Company { get; set; }
 
-        public DateTime Created { get; set; }
+        public int TimeAsUser { get; set; }
+
         public DateTime LastActive { get; set; }
 
         public string AvatarURL { get; set; }
         public ICollection<Avatar> Avatars { get; set; }
+        public ICollection<Script> Scripts { get; set; }
     }
 }

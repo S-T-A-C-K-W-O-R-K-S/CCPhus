@@ -1,4 +1,6 @@
-﻿using CCPhus.API.Data;
+﻿using AutoMapper;
+using CCPhus.API.Data;
+using CCPhus.API.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,24 +16,30 @@ namespace CCPhus.API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IEntityRepository _repo;
+        private readonly IMapper _mapper;
 
-        public UsersController(IEntityRepository repo)
+        public UsersController(IEntityRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _repo.GetUsers();
-            return Ok(users);
+            var usersToReturn = _mapper.Map<IEnumerable<UserForListDTO>>(users);
+
+            return Ok(usersToReturn);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(int id)
         {
             var user = await _repo.GetUser(id);
-            return Ok(User);
+            var userToReturn = _mapper.Map<UserForDetailedDTO>(user);
+
+            return Ok(userToReturn);
         }
     }
 }
