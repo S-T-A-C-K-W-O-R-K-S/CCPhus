@@ -20,7 +20,7 @@ namespace CCPhus.API.DTOs
         public DateTime LastActive { get; set; }
 
         public string AvatarURL { get; set; }
-        public ICollection<Avatar> Avatars { get; set; }
+        public ICollection<AvatarsForDetailedDTO> Avatars { get; set; }
         public ICollection<Script> Scripts { get; set; }
     }
 }
