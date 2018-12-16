@@ -21,6 +21,6 @@ namespace CCPhus.API.DTOs
 
         public string AvatarURL { get; set; }
         public ICollection<AvatarsForDetailedDTO> Avatars { get; set; }
-        public ICollection<Script> Scripts { get; set; }
+        public ICollection<ScriptsForDetailedDTO> Scripts { get; set; }
     }
 }
