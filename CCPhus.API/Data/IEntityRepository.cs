@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CCPhus.API.Data
 {
-    interface IEntityRepository
+    public interface IEntityRepository
     {
         void Add<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;
