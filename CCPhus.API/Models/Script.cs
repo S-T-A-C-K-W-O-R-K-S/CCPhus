@@ -18,8 +18,8 @@ namespace CCPhus.API.Models
         public DateTime Created { get; set; }
         public DateTime LastRun { get; set; }
 
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string Owner { get; set; }
+        public int OwnerId { get; set; }
 
         //public ICollection<User> PermittedUsers { get; set; }
         // many-to-many relations not supported

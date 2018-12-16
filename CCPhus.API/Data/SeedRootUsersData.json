@@ -17,6 +17,8 @@
     "Scripts": [
       {
         "Name": "Seeded Script",
+        "Owner": "CCPhus",
+        "OwnerId": 1,
         "Description": "Generated programatically, for testing purposes.",
         "Code": "foo bar",
         "Created": "1986-08-05",

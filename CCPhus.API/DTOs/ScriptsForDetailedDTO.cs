@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCPhus.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,5 +18,7 @@ namespace CCPhus.API.DTOs
 
         public DateTime Created { get; set; }
         public DateTime LastRun { get; set; }
+
+        public string Owner { get; set; }
     }
 }
