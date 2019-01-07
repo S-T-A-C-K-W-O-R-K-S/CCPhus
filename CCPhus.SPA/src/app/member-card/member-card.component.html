@@ -1,0 +1,11 @@
+<div class="card mb-4">
+  <div class="card-img-wrapper">
+    <img src="{{user.avatarURL}}" alt="TODO: Placeholder Goes Image Here" class="card-img-top"/>
+  </div>
+  <div class="card-body p-1">
+    <h6 class="card-title text-center mb-1">
+      <i class="fa fa-user"></i> {{user.username}}
+    </h6>
+    <p class="card-text text-muted text-center">Last Active: {{user.lastActive | date: 'EEEE, dd MMMM yyyy'}}</p>
+  </div>
+</div>
