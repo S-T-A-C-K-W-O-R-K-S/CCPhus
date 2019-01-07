@@ -17,5 +17,12 @@ namespace CCPhus.API.DTOs
 
         public DateTime Created { get; set; }
         public DateTime LastRun { get; set; }
+
+        // public User User { get; set; } /* fix this >> Owner */
+        // public int UserId { get; set; } /* fix this >> OwnerId */
+
+        // public ICollection<User> UsersWithAccess { get; set; }
+        // many-to-many relations not supported
+        // read this on how to make this work: https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/
     }
 }
