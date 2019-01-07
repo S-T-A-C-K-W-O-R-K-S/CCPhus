@@ -27,3 +27,5 @@ export class UserService {
     return this.http.get<User>(this.baseURL + 'users/' + id, httpOptions);
   }
 }
+
+//TODO: use this with Section 9_82-85 for displaying the list of employees in a company
