@@ -1,3 +1,30 @@
-<p>
-  {{user?.username}}
-</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img src="{{ user?.avatarURL }}" alt="TODO: Placeholder Goes Image Here" class="card-img-top img-thumbnail">
+        <div class="card-body">
+          <div>
+            <strong>Location</strong>
+            <p>{{ user?.city }}, {{ user?.country }}</p>
+          </div>
+          <div>
+            <strong>Time As User</strong>
+            <p>{{ user?.timeAsUser }}</p>
+          </div>
+          <div>
+            <strong>Last Active</strong>
+            <p>{{ user?.lastActive | date: "EEEE, dd MMMM yyyy" }}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary w-100">First Action</button>
+            <button class="btn btn-success w-100">Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8"></div>
+  </div>
+</div>
