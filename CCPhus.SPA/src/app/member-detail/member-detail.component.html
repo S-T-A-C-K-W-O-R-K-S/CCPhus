@@ -25,6 +25,25 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-8"></div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset">
+          <tab heading="About {{user?.username}}">
+            <h4>Description</h4>
+            <p>{{user?.lastActive}}</p>
+          </tab>
+          <tab heading="Some Other Thing">
+              <h4>More Description</h4>
+              <p>{{user?.avatarURL}}</p>
+          </tab>
+          <tab heading="Avatars">
+              <p>Avatars Go Here... Maybe</p>
+          </tab>
+          <tab heading="Messages">
+              <p>?!?</p>
+          </tab>
+        </tabset>
+      </div>
+    </div>
   </div>
 </div>
