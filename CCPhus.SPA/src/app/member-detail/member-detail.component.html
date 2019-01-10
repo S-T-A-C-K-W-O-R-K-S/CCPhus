@@ -2,19 +2,19 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-        <img src="{{ user?.avatarURL }}" alt="TODO: Placeholder Goes Image Here" class="card-img-top img-thumbnail">
+        <img src="{{user.avatarURL}}" alt="TODO: Placeholder Goes Image Here" class="card-img-top img-thumbnail">
         <div class="card-body">
           <div>
             <strong>Location</strong>
-            <p>{{ user?.city }}, {{ user?.country }}</p>
+            <p>{{user.city}}, {{user.country}}</p>
           </div>
           <div>
             <strong>Time As User</strong>
-            <p>{{ user?.timeAsUser }}</p>
+            <p>{{user.timeAsUser}}</p>
           </div>
           <div>
             <strong>Last Active</strong>
-            <p>{{ user?.lastActive | date: "EEEE, dd MMMM yyyy" }}</p>
+            <p>{{user.lastActive | date: "EEEE, dd MMMM yyyy"}}</p>
           </div>
         </div>
         <div class="card-footer">
@@ -28,13 +28,13 @@
     <div class="col-sm-8">
       <div class="tab-panel">
         <tabset class="member-tabset">
-          <tab heading="About {{user?.username}}">
+          <tab heading="About {{user.username}}">
             <h4>Description</h4>
-            <p>{{user?.lastActive}}</p>
+            <p>{{user.lastActive}}</p>
           </tab>
           <tab heading="Some Other Thing">
               <h4>More Description</h4>
-              <p>{{user?.avatarURL}}</p>
+              <p>{{user.avatarURL}}</p>
           </tab>
           <tab heading="Avatars">
               <p>Avatars Go Here... Maybe</p>
