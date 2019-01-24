@@ -1,5 +1,8 @@
 <div class="container mt-4">
   <div class="row">
+    <h1>{{user.username}}'s Profile</h1>
+  </div>
+  <div class="row">
     <div class="col-sm-4">
       <div class="card">
         <img src="{{user.avatarURL}}" alt="TODO: Placeholder Goes Image Here" class="card-img-top img-thumbnail">
@@ -33,14 +36,14 @@
             <p>{{user.lastActive}}</p>
           </tab>
           <tab heading="Some Other Thing">
-              <h4>More Description</h4>
-              <p>{{user.avatarURL}}</p>
+            <h4>More Description</h4>
+            <p>{{user.avatarURL}}</p>
           </tab>
           <tab heading="Avatars">
-              <p>Avatars Go Here... Maybe</p>
+            <ngx-gallery [options]="galleryOptions" [images]="galleryAvatars"></ngx-gallery>
           </tab>
           <tab heading="Messages">
-              <p>?!?</p>
+            <p>?!?</p>
           </tab>
         </tabset>
       </div>
