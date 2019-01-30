@@ -20,10 +20,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
 import { CompanyComponent } from './company/company.component';
-import { MemberCardComponent } from './member-card/member-card.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberCardComponent } from './member/member-card/member-card.component';
+import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { CompanyMemberListResolver } from './_resolvers/company-member-list.resolver';
+import { MemberEditComponent } from './member/member-edit/member-edit.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -39,7 +40,8 @@ export function tokenGetter() {
       CompanyComponent,
       ScriptsComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,

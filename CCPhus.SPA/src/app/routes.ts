@@ -4,9 +4,10 @@ import { ScriptsComponent } from './scripts/scripts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { CompanyComponent } from './company/company.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { CompanyMemberListResolver } from './_resolvers/company-member-list.resolver';
+import { MemberEditComponent } from './member/member-edit/member-edit.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
         children: [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'company', component: CompanyComponent, resolve: {users: CompanyMemberListResolver} },
+            { path: 'company/member/edit', component: MemberEditComponent },
             { path: 'company/member/:id', component: MemberDetailComponent, resolve: {user: MemberDetailResolver} },
             { path: 'scripts', component: ScriptsComponent }
         ]
