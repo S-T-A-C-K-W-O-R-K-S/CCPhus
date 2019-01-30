@@ -25,6 +25,7 @@ import { MemberDetailComponent } from './member/member-detail/member-detail.comp
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { CompanyMemberListResolver } from './_resolvers/company-member-list.resolver';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -66,7 +67,8 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      CompanyMemberListResolver
+      CompanyMemberListResolver,
+      MemberEditResolver
    ],
    bootstrap: [
       AppComponent

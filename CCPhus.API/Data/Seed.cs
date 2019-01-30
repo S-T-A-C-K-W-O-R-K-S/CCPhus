@@ -24,7 +24,7 @@ namespace CCPhus.API.Data
             foreach (var rootUser in rootUsers)
             {
                 byte[] passwordHash, passwordSalt;
-                CreatePasswordHash("root", out passwordHash, out passwordSalt);
+                CreatePasswordHash("root", out passwordHash, out passwordSalt); //TODO: Make this read from JSON.
 
                 rootUser.PasswordHash = passwordHash;
                 rootUser.PasswordSalt = passwordSalt;

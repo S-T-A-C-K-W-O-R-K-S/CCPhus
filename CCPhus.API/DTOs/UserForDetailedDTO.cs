@@ -11,6 +11,7 @@ namespace CCPhus.API.DTOs
         public int Id { get; set; }
         public string Username { get; set; }
 
+        public string Description { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
         public string Company { get; set; }

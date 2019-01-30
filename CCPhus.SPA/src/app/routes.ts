@@ -8,6 +8,7 @@ import { MemberDetailComponent } from './member/member-detail/member-detail.comp
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { CompanyMemberListResolver } from './_resolvers/company-member-list.resolver';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,7 +19,7 @@ export const appRoutes: Routes = [
         children: [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'company', component: CompanyComponent, resolve: {users: CompanyMemberListResolver} },
-            { path: 'company/member/edit', component: MemberEditComponent },
+            { path: 'company/member/edit', component: MemberEditComponent, resolve: {user: MemberEditResolver} },
             { path: 'company/member/:id', component: MemberDetailComponent, resolve: {user: MemberDetailResolver} },
             { path: 'scripts', component: ScriptsComponent }
         ]

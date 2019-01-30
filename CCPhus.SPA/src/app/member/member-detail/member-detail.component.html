@@ -33,17 +33,11 @@
         <tabset class="member-tabset">
           <tab heading="About {{user.username}}">
             <h4>Description</h4>
-            <p>{{user.lastActive}}</p>
+            <p>{{user.description}}</p>
           </tab>
-          <tab heading="Some Other Thing">
+          <tab heading="Statistics">
             <h4>More Description</h4>
             <p>{{user.avatarURL}}</p>
-          </tab>
-          <tab heading="Avatars">
-            <ngx-gallery [options]="galleryOptions" [images]="galleryAvatars"></ngx-gallery>
-          </tab>
-          <tab heading="Messages">
-            <p>?!?</p>
           </tab>
         </tabset>
       </div>

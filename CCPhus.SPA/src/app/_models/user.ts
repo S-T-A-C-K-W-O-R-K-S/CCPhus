@@ -7,6 +7,7 @@ export interface User {
     lastActive: Date;
     avatarURL: string;
 
+    description?: string;
     city?: string;
     country?: string;
     company?: string;
