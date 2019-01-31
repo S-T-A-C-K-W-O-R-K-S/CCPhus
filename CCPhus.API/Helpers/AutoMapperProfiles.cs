@@ -16,6 +16,7 @@ namespace CCPhus.API.Helpers
                 .ForMember(dest => dest.AvatarURL, opt => {
                     opt.MapFrom(src => src.Avatars.FirstOrDefault(avatar => avatar.IsMain).URL);
                 });
+
             CreateMap<User, UserForDetailedDTO>()
                 .ForMember(dest => dest.AvatarURL, opt => {
                     opt.MapFrom(src => src.Avatars.FirstOrDefault(avatar => avatar.IsMain).URL);
@@ -23,8 +24,12 @@ namespace CCPhus.API.Helpers
                 .ForMember(dest => dest.TimeAsUser, opt => {
                     opt.MapFrom(src => src.Created.CalculateTimeAsUser());
                 });
+
             CreateMap<Avatar, AvatarsForDetailedDTO>();
+
             CreateMap<Script, ScriptsForDetailedDTO>();
+
+            CreateMap<UserForUpdateDTO, User>();
         }
     }
 }
