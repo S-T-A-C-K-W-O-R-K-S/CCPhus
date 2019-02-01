@@ -9,6 +9,36 @@
 			"name": "Authentication & Authorization",
 			"item": [
 				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"postman\",\n\t\"password\": \"postman\"\n}\n"
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Login",
 					"event": [
 						{
@@ -50,36 +80,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Register",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"username\": \"postman\",\n\t\"password\": \"postman\"\n}\n"
-						},
-						"url": {
-							"raw": "{{url}}/api/auth/register",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -88,6 +88,26 @@
 			"item": [
 				{
 					"name": "Get Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba54ea85-f1e8-4129-8111-8c81c75133a4",
+								"exec": [
+									"var response = pm.response.json();\r",
+									"\r",
+									"response.forEach(function(element) {\r",
+									"  if (element.username == \"postman\") {\r",
+									"      pm.environment.set(\"userid\", element.id);\r",
+									"  }\r",
+									"  else pm.environment.set(\"userid\", 1);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -146,6 +166,41 @@
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/users/{{userid}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{userid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\": \"{{token}}\"\n}\n"
 						},
 						"url": {
 							"raw": "{{url}}/api/users/{{userid}}",
