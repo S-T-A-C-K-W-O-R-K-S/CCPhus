@@ -26,6 +26,8 @@ namespace CCPhus.API.Helpers
                 });
 
             CreateMap<Avatar, AvatarsForDetailedDTO>();
+            CreateMap<Avatar, AvatarForCreationDTO>();
+            CreateMap<Avatar, AvatarForReturnDTO>();
 
             CreateMap<Script, ScriptsForDetailedDTO>();
 
