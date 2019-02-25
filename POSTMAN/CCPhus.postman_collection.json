@@ -220,7 +220,63 @@
 		},
 		{
 			"name": "Avatars",
-			"item": []
+			"item": [
+				{
+					"name": "Upload Avatar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f4907607-8139-4f5a-a55c-96544dcd2c7a",
+								"exec": [
+									"var response = pm.response.json();\r",
+									"pm.environment.set(\"avatarid\", response.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/company/{{userid}}/avatars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"{{userid}}",
+								"avatars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Scripts",

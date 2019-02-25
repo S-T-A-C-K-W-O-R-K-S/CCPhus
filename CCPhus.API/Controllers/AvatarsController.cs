@@ -52,7 +52,7 @@ namespace CCPhus.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAvatarForUser(int userId, AvatarForCreationDTO avatarForCreationDTO)
+        public async Task<IActionResult> AddAvatarForUser(int userId, [FromForm]AvatarForCreationDTO avatarForCreationDTO)
         {
             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
@@ -85,11 +85,11 @@ namespace CCPhus.API.Controllers
             if (!userFromRepo.Avatars.Any(a => a.IsMain))
                 avatar.IsMain = true;
 
-            var avatarToReturn = _mapper.Map<AvatarForReturnDTO>(avatar);
+            userFromRepo.Avatars.Add(avatar);
 
             if (await _repo.SaveAll())
             {
-                userFromRepo.Avatars.Add(avatar);
+                var avatarToReturn = _mapper.Map<AvatarForReturnDTO>(avatar);
                 return CreatedAtRoute("GetAvatar", new { id = avatar.Id }, avatarToReturn);
             }
 
